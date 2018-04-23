@@ -24,10 +24,6 @@ import os  # handy system and path functions
 import sys  # to get file system encoding
 import calibration
 
-
-
-
-
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
 os.chdir(_thisDir)
@@ -57,9 +53,9 @@ logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a f
 
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
-calibration_object = calibration.Calibration(expInfo['participant']);
-# Start Code - component code to be run before the window creation
 
+# Start Code - component code to be run before the window creation
+calibration_object = calibration.Calibration(expInfo['participant']);
 # Setup the Window
 win = visual.Window(
     size=(1280, 720), fullscr=False, screen=0,
@@ -107,7 +103,7 @@ globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
 
 # set up handler to look after randomisation of conditions etc
-locationsLoop = data.TrialHandler(nReps=8, method='sequential',
+locationsLoop = data.TrialHandler(nReps=2, method='sequential',
                                   extraInfo=expInfo, originPath=-1,
                                   trialList=[None],
                                   seed=None, name='locationsLoop')
@@ -228,7 +224,7 @@ for thisLocationsLoop in locationsLoop:
         stimulusClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(1.700000)
+        routineTimer.add(20.000000)
         # update component parameters for each repeat
         # keep track of which components have finished
         stimulusComponents = [text, p_port_7]
@@ -250,7 +246,7 @@ for thisLocationsLoop in locationsLoop:
                 text.tStart = t
                 text.frameNStart = frameN  # exact frame index
                 text.setAutoDraw(True)
-            frameRemains = 0.0 + 1.70 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 20.00 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if text.status == STARTED and t >= frameRemains:
                 text.setAutoDraw(False)
             # *p_port_7* updates

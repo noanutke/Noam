@@ -1,14 +1,11 @@
 
-import os  # handy system and path functions
-import sys  # to get file system encoding
-import socket
+
 import time
 import numpy as np
 from sklearn import datasets, linear_model
 import pandas
 import openpyxl
 import utils
-from openpyxl import load_workbook
 
 TCP_IP = "192.168.0.1"
 TCP_PORT = 20121
@@ -18,10 +15,10 @@ class Calibration:
     log_path_preffix = 'calibrationLog_'
     log_path_suffix = '.xlsx'
     sheet_name = 'CalibrationArray'
-    trials_amount = 7;
-    test_index = 1;
+    trials_amount = 6;
+    test_index = 0;
     current_VAS = -1;
-    initial_tmp_array = [30,36,42]
+    initial_tmp_array = [39.0,42.0,46.0]
     amount_of_initial_trials = 3;
 
     def __init__(self, subId):
@@ -33,23 +30,24 @@ class Calibration:
         return round(number * 2) / 2
 
     def runVAS(self, x):
-        if self.test_index <= self.amount_of_initial_trials:
+        if self.test_index < self.amount_of_initial_trials:
             y = self.initial_tmp_array[self.test_index]
         else:
             regr = linear_model.LinearRegression()
             regr.fit(self.rating_array.reshape(-1,1), self.tmp_array.reshape(-1,1))
             y = regr.predict(np.array([x]).reshape(-1,1))
             y = self.round_of_rating(y)
-        self.current_VAS = y;
+        self.current_VAS = y if y <= 48 else 48;
         if utils.pain_machine_connected:
-            utils.initPain(str(self.current_VAS), False)
-            time.sleep(15)
+            utils.initPain(str(self.current_VAS), False, True)
+
 
 
     def updateRating(self, rating):
-        if rating != "space":
-                self.rating_array = np.insert(self.rating_array, self.test_index, int(rating))
-                self.tmp_array = np.insert(self.tmp_array, self.test_index, self.current_VAS)
+        if rating == "space":
+            rating = 10;
+        self.rating_array = np.insert(self.rating_array, self.test_index, int(rating))
+        self.tmp_array = np.insert(self.tmp_array, self.test_index, self.current_VAS)
         self.test_index += 1;
         if self.test_index == self.trials_amount:
             self.finish()

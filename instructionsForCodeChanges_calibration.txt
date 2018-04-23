@@ -1,0 +1,14 @@
+add to imports:
+import calibration
+
+search for this: # Start Code - component code to be run before the window creation
+calibration_object = calibration.Calibration(expInfo['participant']);
+
+
+search for this: # -------Start Routine "stimulus"-------
+And paste this below:
+calibration_object.runVAS(vas)
+
+search for this: painRating.rt = painRating.clock.getTime()
+And paste this below:
+calibration_object.updateRating(painRating.keys)

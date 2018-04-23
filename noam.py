@@ -55,7 +55,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=(1280, 720), fullscr=False, screen=0,
+    size=(1280, 720), fullscr=True, screen=0,
     allowGUI=True, allowStencil=False,
     monitor='testMonitor', color=[0, 0, 0], colorSpace='rgb',
     blendMode='avg', useFBO=True)
@@ -450,7 +450,7 @@ for thisBlock in block:
         stim.opacity = 0
         text.color = 'Black'
         if utils.pain_machine_connected:
-            utils.initPain(thisBlock.stimulus, True)
+            utils.initPain(thisBlock.stimulus, True, False)
         else:
             print (thisBlock.stimulus)
     else:

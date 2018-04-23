@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ac1084a-0cc3-4562-9319-4b1a4c6e4e48" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/arrows.xlsx" afterPath="$PROJECT_DIR$/arrows.xlsx" />
+      <change beforePath="$PROJECT_DIR$/calibration.py" afterPath="$PROJECT_DIR$/calibration.py" />
+      <change beforePath="$PROJECT_DIR$/noam.py" afterPath="$PROJECT_DIR$/noam.py" />
+      <change beforePath="$PROJECT_DIR$/run_calibration.py" afterPath="$PROJECT_DIR$/run_calibration.py" />
+      <change beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,12 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="noam.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="noam.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/noam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="1825">
+              <caret line="73" column="33" lean-forward="true" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+              <folding>
+                <element signature="e#513#561#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -26,20 +33,30 @@
       <file leaf-file-name="calibration.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calibration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
-              <caret line="80" column="53" lean-forward="false" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
+            <state relative-caret-position="-655">
+              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
-                <element signature="e#1#45#0" expanded="true" />
+                <element signature="e#2#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/psychopy/data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="2624" column="0" lean-forward="false" selection-start-line="2624" selection-start-column="0" selection-end-line="2624" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state relative-caret-position="-425">
+              <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="9" />
               <folding>
                 <element signature="e#69#82#0" expanded="true" />
               </folding>
@@ -90,8 +107,8 @@
       <file leaf-file-name="run_calibration.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_calibration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8200">
-              <caret line="340" column="68" lean-forward="false" selection-start-line="340" selection-start-column="68" selection-end-line="340" selection-end-column="68" />
+            <state relative-caret-position="90">
+              <caret line="223" column="38" lean-forward="true" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
               <folding>
                 <element signature="e#513#561#0" expanded="true" />
               </folding>
@@ -99,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indexing.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/pandas/core/indexing.py">
+      <file leaf-file-name="function_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/numpy/lib/function_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34500">
-              <caret line="1391" column="16" lean-forward="false" selection-start-line="1391" selection-start-column="16" selection-end-line="1391" selection-end-column="16" />
+            <state relative-caret-position="191">
+              <caret line="5035" column="0" lean-forward="false" selection-start-line="5035" selection-start-column="0" selection-end-line="5035" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,16 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FULL</find>
-      <find>TrialHandler</find>
-      <find>VAS</find>
-      <find>physi</find>
-      <find>condition</find>
-      <find>calibr</find>
-      <find>&quot;stim</find>
-      <find>updateRating</find>
-      <find>runV</find>
-      <find>data_frame_rating</find>
       <find>cali</find>
       <find>id</find>
       <find>17</find>
@@ -141,7 +148,6 @@
       <find>phys</find>
       <find>phy</find>
       <find>read_from_file</find>
-      <find>initPain</find>
       <find>Prepare to start Routine</find>
       <find>stimulus</find>
       <find>block</find>
@@ -149,7 +155,18 @@
       <find>thisBlock</find>
       <find>importConditions</find>
       <find>in</find>
+      <find>calibration_object</find>
+      <find>uti</find>
+      <find>calibration</find>
+      <find>8</find>
+      <find>test_index</find>
+      <find>runv</find>
+      <find>9</find>
+      <find>initPain</find>
+      <find>readTmpFromFile</find>
+      <find>16</find>
       <find>full</find>
+      <find>runVAS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,10 +176,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/exp/ratingVAS7.py" />
-        <option value="$PROJECT_DIR$/run_calibration.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/calibration.py" />
         <option value="$PROJECT_DIR$/noam_backup.py" />
+        <option value="$PROJECT_DIR$/run_calibration.py" />
+        <option value="$PROJECT_DIR$/calibration.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/noam.py" />
       </list>
     </option>
@@ -265,6 +282,24 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.noam">
+    <configuration name="calibration" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Noam" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calibration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="noam" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -319,16 +354,18 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.noam" />
       <item index="1" class="java.lang.String" itemvalue="Python.ratingVAS7" />
       <item index="2" class="java.lang.String" itemvalue="Python.run_calibration" />
+      <item index="3" class="java.lang.String" itemvalue="Python.calibration" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.noam" />
         <item index="1" class="java.lang.String" itemvalue="Python.run_calibration" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ratingVAS7" />
+        <item index="2" class="java.lang.String" itemvalue="Python.calibration" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ratingVAS7" />
       </list>
     </recent_temporary>
   </component>
@@ -360,7 +397,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22904368" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22867298" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -404,7 +441,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/calibration.py</url>
-          <line>95</line>
+          <line>93</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -412,8 +449,13 @@
           <line>446</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/calibration.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="54" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -475,16 +517,6 @@ writer.save();</expression-string>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
-          <folding>
-            <element signature="e#69#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/openpyxl/reader/excel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3750">
@@ -539,7 +571,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,7 +594,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -581,7 +617,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -602,7 +640,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -623,7 +663,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,7 +673,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -639,7 +683,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +693,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,7 +703,9 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -685,18 +735,11 @@ writer.save();</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/psychopy/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="2632" column="33" lean-forward="false" selection-start-line="2632" selection-start-column="33" selection-end-line="2632" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/sklearn/linear_model/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="238" column="0" lean-forward="false" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -704,6 +747,7 @@ writer.save();</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -754,42 +798,60 @@ writer.save();</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/noam_backup.py" />
+    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/psychopy/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="2624" column="0" lean-forward="false" selection-start-line="2624" selection-start-column="0" selection-end-line="2624" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="5035" column="0" lean-forward="false" selection-start-line="5035" selection-start-column="0" selection-end-line="5035" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_calibration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8200">
-          <caret line="340" column="68" lean-forward="false" selection-start-line="340" selection-start-column="68" selection-end-line="340" selection-end-column="68" />
+        <state relative-caret-position="90">
+          <caret line="223" column="38" lean-forward="true" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
           <folding>
             <element signature="e#513#561#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/noam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1825">
+          <caret line="73" column="33" lean-forward="true" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding>
+            <element signature="e#513#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calibration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-655">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#2#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="-425">
+          <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="9" />
           <folding>
             <element signature="e#69#82#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/noam_backup.py" />
-    <entry file="file://$PROJECT_DIR$/calibration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="80" column="53" lean-forward="false" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
-          <folding>
-            <element signature="e#1#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/noam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
