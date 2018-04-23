@@ -1,0 +1,36 @@
+change this: rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=1,
+                            precision=100, showValue=False, markerExpansion=0, scale=u'', markerStart=u'0',
+                            tickHeight=u'0', showAccept=False)
+
+with this: rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
+                            precision=1, showValue=False, markerExpansion=0, scale=u'', markerStart=u'5',
+                            tickHeight=u'0', showAccept=False, lineColor='Black',textSize=0.0, leftKeys='1',
+                            rightKeys='4')
+
+
+
+add to imports:
+import time
+import utils
+
+
+look for: "stim.setImage(picture)" and delete it
+
+look for: "# ------Prepare to start Routine "stimulus"-------" and above it paste:
+
+    if "VAS" in thisBlock.stimulus:
+        showCross = True
+        text.height = 0.6
+        stim.opacity = 0
+        text.color = 'Black'
+        if utils.pain_machine_connected:
+            utils.initPain(thisBlock.stimulus, True)
+        else:
+            print (thisBlock.stimulus)
+    else:
+        time.sleep(2)
+        text.size = (0, 0)
+        text.color = 'Grey'
+        stim.setImage(thisBlock.stimulus)
+
+        showCross = False
