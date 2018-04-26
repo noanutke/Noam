@@ -140,7 +140,8 @@ scaleImage = visual.ImageStim(
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
-rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
+rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=utils.laptopNoa_scale_size,
+                            pos=[0.01, utils.laptopNoa_scale_posY], low=0, high=10,
                             precision=1, showValue=False, markerExpansion=0, scale=u'', markerStart=u'5',
                             tickHeight=u'0', showAccept=False, lineColor='Black',textSize=0.0, leftKeys='1',
                             rightKeys='4')

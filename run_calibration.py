@@ -224,7 +224,7 @@ for thisLocationsLoop in locationsLoop:
         stimulusClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(20.000000)
+        routineTimer.add(21.000000)
         # update component parameters for each repeat
         # keep track of which components have finished
         stimulusComponents = [text, p_port_7]
@@ -246,7 +246,7 @@ for thisLocationsLoop in locationsLoop:
                 text.tStart = t
                 text.frameNStart = frameN  # exact frame index
                 text.setAutoDraw(True)
-            frameRemains = 0.0 + 20.00 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 21.00 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if text.status == STARTED and t >= frameRemains:
                 text.setAutoDraw(False)
             # *p_port_7* updates

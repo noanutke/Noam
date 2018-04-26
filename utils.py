@@ -7,7 +7,17 @@ import pandas
 TCP_IP = "192.168.137.1"
 TCP_PORT = 20121
 
-pain_machine_connected = True
+pain_machine_connected = False
+
+# size and position of rating scale to fit default scale
+laptop7_scale_posY = -0.06
+laptop7_scale_size = 1.80
+
+laptopNoa_scale_posY = -0.04
+laptopNoa_scale_size = 1.53
+
+stimuli_comp_scale_posY = -0.06
+stimuli_comp_scale_size = 2.8
 
 cmds_calibration = {
 
