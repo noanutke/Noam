@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.85.4),
-    on October 21, 2018, at 14:38
+    on October 21, 2018, at 16:23
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -108,19 +108,26 @@ jitt_1 = visual.TextStim(win=win, name='jitt_1',
 # Initialize components for Routine "stimulus"
 stimulusClock = core.Clock()
 text = visual.TextStim(win=win, name='text',
-                       text=u'+',
-                       font=u'Arial',
-                       pos=(0, 0), height=0.6, wrapWidth=None, ori=0,
-                       color=u'black', colorSpace='rgb', opacity=1,
+                       text='+',
+                       font='Arial',
+                       pos=(0, 0), height=0.1, wrapWidth=None, ori=0,
+                       color='white', colorSpace='rgb', opacity=1,
                        depth=0.0);
 stim = visual.ImageStim(
     win=win, name='stim',
     image='sin', mask=None,
-    ori=0, pos=(0, 0), size=1.0,
+    ori=0, pos=[0, 0], size=(1, 1),
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-1.0)
 p_port_7 = parallel.ParallelPort(address='0x0378')
+sentence = visual.ImageStim(
+    win=win, name='sentence',
+    image=u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText1.png', mask=None,
+    ori=0, pos=(0, -0.75), size=None,
+    color=[1, 1, 1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=128, interpolate=True, depth=-3.0)
 
 # Initialize components for Routine "jitter2"
 jitter2Clock = core.Clock()
@@ -140,10 +147,11 @@ scaleImage = visual.ImageStim(
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
-rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
+rating = rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
                             precision=1, showValue=False, markerExpansion=0, scale=u'', markerStart=u'5',
                             tickHeight=u'0', showAccept=False, lineColor='Black',textSize=0.0, leftKeys='1',
                             rightKeys='4')
+
 p_port_3 = parallel.ParallelPort(address='0x0378')
 
 # Initialize components for Routine "arrow"
@@ -443,22 +451,31 @@ for thisTrial in trials:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # the Routine "jitter1" was not non-slip safe, so reset the non-slip timer
-
     routineTimer.reset()
     if "VAS" in stimulus:
         showCross = True
         text.height = 0.6
         stim.opacity = 0
+        sentence.opacity = 0
         text.color = 'Black'
         if utils.pain_machine_connected:
             utils.initPain(stimulus, True)
         else:
             print (stimulus)
     else:
+        if "bad1" in stimulus:
+            sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText1.png'
+        elif "bad2" in stimulus:
+            sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText2.png'
+        elif "neutral1" in stimulus:
+            sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText1.png'
+        else:
+            sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText2.png'
         time.sleep(2)
         text.size = (0, 0)
         text.color = 'Grey'
         stim.opacity =1
+        sentence.opacity = 1
         stim.setImage(stimulus)
         stim.setSize((1, 1))
 
@@ -470,14 +487,13 @@ for thisTrial in trials:
     continueRoutine = True
     routineTimer.add(17.000000)
     # update component parameters for each repeat
-
+    stim.setPos((0, 0))
 
     # keep track of which components have finished
-    stimulusComponents = [text, stim, p_port_7]
+    stimulusComponents = [text, stim, p_port_7, sentence]
     for thisComponent in stimulusComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
-
 
     # -------Start Routine "stimulus"-------
     while continueRoutine and routineTimer.getTime() > 0:
@@ -516,6 +532,16 @@ for thisTrial in trials:
         if p_port_7.status == STARTED and t >= frameRemains:
             p_port_7.status = STOPPED
             win.callOnFlip(p_port_7.setData, int(0))
+
+        # *sentence* updates
+        if t >= 0.0 and sentence.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            sentence.tStart = t
+            sentence.frameNStart = frameN  # exact frame index
+            sentence.setAutoDraw(True)
+        frameRemains = 0.0 + 17.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
+        if sentence.status == STARTED and t >= frameRemains:
+            sentence.setAutoDraw(False)
 
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
