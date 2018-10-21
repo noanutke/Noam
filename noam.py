@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.85.4),
-    on April 23, 2018, at 10:18
+    on October 21, 2018, at 14:38
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -20,8 +20,8 @@ from numpy import (sin, cos, tan, log, log10, pi, average,
 from numpy.random import random, randint, normal, shuffle
 import os  # handy system and path functions
 import sys  # to get file system encoding
-import utils
 import time
+import utils
 
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
@@ -55,7 +55,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=(1280, 720), fullscr=True, screen=0,
+    size=(1280, 720), fullscr=False, screen=0,
     allowGUI=True, allowStencil=False,
     monitor='testMonitor', color=[0, 0, 0], colorSpace='rgb',
     blendMode='avg', useFBO=True)
@@ -108,15 +108,15 @@ jitt_1 = visual.TextStim(win=win, name='jitt_1',
 # Initialize components for Routine "stimulus"
 stimulusClock = core.Clock()
 text = visual.TextStim(win=win, name='text',
-                       text='+',
-                       font='Arial',
-                       pos=(0, 0), height=0.1, wrapWidth=None, ori=0,
-                       color='white', colorSpace='rgb', opacity=1,
+                       text=u'+',
+                       font=u'Arial',
+                       pos=(0, 0), height=0.6, wrapWidth=None, ori=0,
+                       color=u'black', colorSpace='rgb', opacity=1,
                        depth=0.0);
 stim = visual.ImageStim(
     win=win, name='stim',
     image='sin', mask=None,
-    ori=0, pos=(0, 0), size=None,
+    ori=0, pos=(0, 0), size=1.0,
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=-1.0)
@@ -140,8 +140,7 @@ scaleImage = visual.ImageStim(
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
-rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=utils.laptopNoa_scale_size,
-                            pos=[0.01, utils.laptopNoa_scale_posY], low=0, high=10,
+rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
                             precision=1, showValue=False, markerExpansion=0, scale=u'', markerStart=u'5',
                             tickHeight=u'0', showAccept=False, lineColor='Black',textSize=0.0, leftKeys='1',
                             rightKeys='4')
@@ -310,23 +309,23 @@ if p_port.status == STARTED:
     win.callOnFlip(p_port.setData, int(0))
 
 # set up handler to look after randomisation of conditions etc
-block = data.TrialHandler(nReps=1, method='random',
-                          extraInfo=expInfo, originPath=-1,
-                          trialList=data.importConditions(u'blocksList.xlsx'),
-                          seed=None, name='block')
-thisExp.addLoop(block)  # add the loop to the experiment
-thisBlock = block.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisBlock.rgb)
-if thisBlock != None:
-    for paramName in thisBlock.keys():
-        exec (paramName + '= thisBlock.' + paramName)
+trials = data.TrialHandler(nReps=1, method='random',
+                           extraInfo=expInfo, originPath=-1,
+                           trialList=data.importConditions(u'blocksList.xlsx'),
+                           seed=None, name='trials')
+thisExp.addLoop(trials)  # add the loop to the experiment
+thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+if thisTrial != None:
+    for paramName in thisTrial.keys():
+        exec (paramName + '= thisTrial.' + paramName)
 
-for thisBlock in block:
-    currentLoop = block
-    # abbreviate parameter names if possible (e.g. rgb = thisBlock.rgb)
-    if thisBlock != None:
-        for paramName in thisBlock.keys():
-            exec (paramName + '= thisBlock.' + paramName)
+for thisTrial in trials:
+    currentLoop = trials
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+    if thisTrial != None:
+        for paramName in thisTrial.keys():
+            exec (paramName + '= thisTrial.' + paramName)
 
     # ------Prepare to start Routine "fixation_2"-------
     t = 0
@@ -444,22 +443,24 @@ for thisBlock in block:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # the Routine "jitter1" was not non-slip safe, so reset the non-slip timer
+
     routineTimer.reset()
-    if "VAS" in thisBlock.stimulus:
+    if "VAS" in stimulus:
         showCross = True
         text.height = 0.6
         stim.opacity = 0
         text.color = 'Black'
         if utils.pain_machine_connected:
-            utils.initPain(thisBlock.stimulus, True, False)
+            utils.initPain(stimulus, True)
         else:
-            print (thisBlock.stimulus)
+            print (stimulus)
     else:
-        stim.opacity = 1
         time.sleep(2)
         text.size = (0, 0)
         text.color = 'Grey'
-        stim.setImage(thisBlock.stimulus)
+        stim.opacity =1
+        stim.setImage(stimulus)
+        stim.setSize((1, 1))
 
         showCross = False
     # ------Prepare to start Routine "stimulus"-------
@@ -470,11 +471,13 @@ for thisBlock in block:
     routineTimer.add(17.000000)
     # update component parameters for each repeat
 
+
     # keep track of which components have finished
     stimulusComponents = [text, stim, p_port_7]
     for thisComponent in stimulusComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
+
 
     # -------Start Routine "stimulus"-------
     while continueRoutine and routineTimer.getTime() > 0:
@@ -660,9 +663,9 @@ for thisBlock in block:
     for thisComponent in feedback_3Components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store data for block (TrialHandler)
-    block.addData('rating.response', rating.getRating())
-    block.addData('rating.rt', rating.getRT())
+    # store data for trials (TrialHandler)
+    trials.addData('rating.response', rating.getRating())
+    trials.addData('rating.rt', rating.getRT())
     if p_port_3.status == STARTED:
         win.callOnFlip(p_port_3.setData, int(0))
 
@@ -849,7 +852,7 @@ for thisBlock in block:
 
     thisExp.nextEntry()
 
-# completed 1 repeats of 'block'
+# completed 1 repeats of 'trials'
 
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename + '.csv')

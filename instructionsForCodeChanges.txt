@@ -18,19 +18,21 @@ look for: "stim.setImage(picture)" and delete it
 
 look for: "# ------Prepare to start Routine "stimulus"-------" and above it paste:
 
-    if "VAS" in thisBlock.stimulus:
+     if "VAS" in stimulus:
         showCross = True
         text.height = 0.6
         stim.opacity = 0
         text.color = 'Black'
         if utils.pain_machine_connected:
-            utils.initPain(thisBlock.stimulus, True)
+            utils.initPain(stimulus, True)
         else:
-            print (thisBlock.stimulus)
+            print (stimulus)
     else:
         time.sleep(2)
         text.size = (0, 0)
         text.color = 'Grey'
-        stim.setImage(thisBlock.stimulus)
+        stim.opacity =1
+        stim.setImage(stimulus)
+        stim.setSize((1, 1))
 
         showCross = False
