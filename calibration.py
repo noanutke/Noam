@@ -27,7 +27,7 @@ class Calibration:
         self.rating_array = np.array([])
 
     def round_of_rating(self, number):
-        return round(number * 2) / 2
+        return round(number)
 
     def runVAS(self, x):
         if self.test_index < self.amount_of_initial_trials:
@@ -37,7 +37,7 @@ class Calibration:
             regr.fit(self.rating_array.reshape(-1,1), self.tmp_array.reshape(-1,1))
             y = regr.predict(np.array([x]).reshape(-1,1))
             y = self.round_of_rating(y)
-        self.current_VAS = y if y <= 48 else 48;
+        self.current_VAS = y if y <= 48 else 48.0;
         if utils.pain_machine_connected:
             utils.initPain(str(self.current_VAS), False, True)
 
