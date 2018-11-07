@@ -55,7 +55,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=(1280, 720), fullscr=True, screen=0,
+    size=(1280, 720), fullscr=False, screen=0,
     allowGUI=True, allowStencil=False,
     monitor='testMonitor', color=[0, 0, 0], colorSpace='rgb',
     blendMode='avg', useFBO=True)
@@ -139,7 +139,7 @@ stim = visual.ImageStim(
 p_port_7 = parallel.ParallelPort(address='0x0378')
 sentence = visual.ImageStim(
     win=win, name='sentence',
-    image=u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText1.png', mask=None,
+    image=u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText1.png', mask=None,
     ori=0, pos=(0, -0.75), size=None,
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -487,7 +487,7 @@ for thisRun in runs:
         routineTimer.reset()
         if "VAS" in stimulus:
             if utils.pain_machine_connected:
-                utils.initPain(stimulus, True)
+                utils.initPain(stimulus, True, False)
             else:
                 print (stimulus)
         # ------Prepare to start Routine "decideOnStimulus_2"-------
@@ -561,13 +561,13 @@ for thisRun in runs:
 
         else:
             if "bad1" in stimulus:
-                sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText1.png'
+                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText1.png'
             elif "bad2" in stimulus:
-                sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText2.png'
+                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText2.png'
             elif "neutral1" in stimulus:
-                sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText1.png'
+                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\neutralText1.png'
             else:
-                sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText2.png'
+                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\neutralText2.png'
 
             text.size = (0, 0)
             text.color = 'Grey'
@@ -975,8 +975,8 @@ for thisRun in runs:
 
     # completed 1 repeats of 'trials'
 
-    thisExp.nextEntry()
 
+    thisExp.nextEntry()
 # completed 2 repeats of 'runs'
 
 # these shouldn't be strictly necessary (should auto-save)

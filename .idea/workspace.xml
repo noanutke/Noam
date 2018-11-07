@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ac1084a-0cc3-4562-9319-4b1a4c6e4e48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/arrows.xlsx" afterPath="$PROJECT_DIR$/arrows.xlsx" />
-      <change beforePath="$PROJECT_DIR$/blocksList.xlsx" afterPath="$PROJECT_DIR$/blocksList.xlsx" />
       <change beforePath="$PROJECT_DIR$/calibration.py" afterPath="$PROJECT_DIR$/calibration.py" />
-      <change beforePath="$PROJECT_DIR$/instructionsForCodeChanges.txt" afterPath="$PROJECT_DIR$/instructionsForCodeChanges.txt" />
       <change beforePath="$PROJECT_DIR$/instructionsForCodeChanges_calibration.txt" afterPath="$PROJECT_DIR$/instructionsForCodeChanges_calibration.txt" />
       <change beforePath="$PROJECT_DIR$/noam.py" afterPath="$PROJECT_DIR$/noam.py" />
-      <change beforePath="$PROJECT_DIR$/painTask.psyexp" afterPath="$PROJECT_DIR$/painTask.psyexp" />
-      <change beforePath="$PROJECT_DIR$/physical_calibration.psyexp" afterPath="$PROJECT_DIR$/physical_calibration.psyexp" />
       <change beforePath="$PROJECT_DIR$/run_calibration.py" afterPath="$PROJECT_DIR$/run_calibration.py" />
       <change beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
@@ -23,14 +18,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="noam.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="noam.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/noam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="491" column="32" lean-forward="true" selection-start-line="491" selection-start-column="32" selection-end-line="491" selection-end-column="32" />
+            <state relative-caret-position="1750">
+              <caret line="139" column="28" lean-forward="true" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
               <folding>
                 <element signature="e#516#564#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="socket.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/socket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="226" column="26" lean-forward="true" selection-start-line="226" selection-start-column="26" selection-end-line="226" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,14 +50,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
-              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="2475">
+              <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
               <folding>
                 <element signature="e#69#82#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="win32.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/pyglet/gl/win32.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/run_calibration.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="89">
-              <caret line="340" column="36" lean-forward="false" selection-start-line="340" selection-start-column="36" selection-end-line="340" selection-end-column="36" />
+              <caret line="384" column="26" lean-forward="true" selection-start-line="384" selection-start-column="26" selection-end-line="384" selection-end-column="26" />
               <folding>
                 <element signature="e#516#564#0" expanded="true" />
               </folding>
@@ -72,8 +87,8 @@
       <file leaf-file-name="calibration.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calibration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="367">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
                 <element signature="e#2#13#0" expanded="true" />
               </folding>
@@ -102,12 +117,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>to start Routine &quot;stimu</find>
       <find>senten</find>
       <find>stim</find>
       <find>cmds_calibration</find>
       <find>runVAS</find>
-      <find>vas</find>
       <find>3</find>
       <find>locationsl</find>
       <find>round_of_rating</find>
@@ -122,8 +135,6 @@
       <find>ding Routine &quot;painFeedbackRoutine&quot;---</find>
       <find>trials_amount</find>
       <find>test_index</find>
-      <find>full</find>
-      <find>updateRating</find>
       <find>prepare</find>
       <find>slee</find>
       <find>black</find>
@@ -132,6 +143,10 @@
       <find>to start Routine &quot;decideOnSti</find>
       <find>.0</find>
       <find>epare to start Routine &quot;decid</find>
+      <find>full</find>
+      <find>updateRating</find>
+      <find>vas</find>
+      <find>ng Routine &quot;painFeedback</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,9 +158,9 @@
         <option value="$PROJECT_DIR$/exp/ratingVAS7.py" />
         <option value="$PROJECT_DIR$/noam_backup.py" />
         <option value="$PROJECT_DIR$/aa.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/calibration.py" />
         <option value="$PROJECT_DIR$/run_calibration.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/noam.py" />
       </list>
     </option>
@@ -318,12 +333,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23076923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27725118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27725118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36966825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36966825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -367,21 +382,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/calibration.py</url>
-          <line>93</line>
+          <line>98</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/noam.py</url>
-          <line>282</line>
-          <option name="timeStamp" value="66" />
+          <url>file://$PROJECT_DIR$/utils.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run_calibration.py</url>
-          <line>307</line>
-          <option name="timeStamp" value="75" />
+          <url>file://$PROJECT_DIR$/utils.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="83" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -493,10 +508,44 @@ writer.save();</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/psychopy/visual/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/pyglet/gl/win32.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="226" column="26" lean-forward="true" selection-start-line="226" selection-start-column="26" selection-end-line="226" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2475">
+          <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+          <folding>
+            <element signature="e#69#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/calibration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="45" column="20" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="367">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#2#13#0" expanded="true" />
           </folding>
@@ -506,37 +555,19 @@ writer.save();</expression-string>
     <entry file="file://$PROJECT_DIR$/run_calibration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
-          <caret line="340" column="36" lean-forward="false" selection-start-line="340" selection-start-column="36" selection-end-line="340" selection-end-column="36" />
+          <caret line="384" column="26" lean-forward="true" selection-start-line="384" selection-start-column="26" selection-end-line="384" selection-end-column="26" />
           <folding>
             <element signature="e#516#564#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/PsychoPy2/Lib/site-packages/psychopy/visual/image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/noam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="491" column="32" lean-forward="true" selection-start-line="491" selection-start-column="32" selection-end-line="491" selection-end-column="32" />
+        <state relative-caret-position="1750">
+          <caret line="139" column="28" lean-forward="true" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
           <folding>
             <element signature="e#516#564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="e#69#82#0" expanded="true" />
           </folding>
         </state>
       </provider>

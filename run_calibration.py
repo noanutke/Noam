@@ -236,7 +236,7 @@ for thisLocationsLoop in locationsLoop:
                 thisComponent.status = NOT_STARTED
 
         # -------Start Routine "stimulus"-------
-        calibration_object.runVAS(vas)
+        shouldRunVas = True
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
             t = stimulusClock.getTime()
@@ -277,9 +277,14 @@ for thisLocationsLoop in locationsLoop:
             if endExpNow or event.getKeys(keyList=["escape"]):
                 core.quit()
 
+
             # refresh the screen
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
+
+            if shouldRunVas:
+                calibration_object.runVAS(vas)
+                shouldRunVas = False;
 
         # -------Ending Routine "stimulus"-------
         for thisComponent in stimulusComponents:
@@ -294,7 +299,7 @@ for thisLocationsLoop in locationsLoop:
         painFeedbackRoutineClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(8.000000)
+        routineTimer.add(15.000000)
         # update component parameters for each repeat
         painRating = event.BuilderKeyResponse()
         # keep track of which components have finished
@@ -316,7 +321,7 @@ for thisLocationsLoop in locationsLoop:
                 p_port_3.frameNStart = frameN  # exact frame index
                 p_port_3.status = STARTED
                 win.callOnFlip(p_port_3.setData, int(6))
-            frameRemains = 0.0 + 8 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if p_port_3.status == STARTED and t >= frameRemains:
                 p_port_3.status = STOPPED
                 win.callOnFlip(p_port_3.setData, int(0))
@@ -330,7 +335,7 @@ for thisLocationsLoop in locationsLoop:
                 # keyboard checking is just starting
                 painRating.clock.reset()  # now t=0
                 event.clearEvents(eventType='keyboard')
-            frameRemains = 0.0 + 8 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if painRating.status == STARTED and t >= frameRemains:
                 painRating.status = STOPPED
             if painRating.status == STARTED:
@@ -343,7 +348,7 @@ for thisLocationsLoop in locationsLoop:
                     if painRating.keys == []:  # then this was the first keypress
                         painRating.keys = theseKeys[0]  # just the first key pressed
                         painRating.rt = painRating.clock.getTime()
-                        calibration_object.updateRating(painRating.keys)
+
                         paintCross = True
                         painRatingText.setAutoDraw(False)
                         textAfterRate.setAutoDraw(True)
@@ -358,7 +363,7 @@ for thisLocationsLoop in locationsLoop:
                 else:
                     painRatingText.setAutoDraw(True)
                 painRatingText.setAutoDraw(True)
-            frameRemains = 0.0 + 8 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if painRatingText.status == STARTED and t >= frameRemains:
                 painRatingText.setAutoDraw(False)
 
@@ -380,6 +385,7 @@ for thisLocationsLoop in locationsLoop:
                 win.flip()
 
         # -------Ending Routine "painFeedbackRoutine"-------
+        calibration_object.updateRating(painRating.keys)
         for thisComponent in painFeedbackRoutineComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
@@ -390,7 +396,7 @@ for thisLocationsLoop in locationsLoop:
         if painRating.keys in ['', [], None]:  # No response was made
             painRating.keys = None
         trials.addData('painRating.keys', painRating.keys)
-        if painRating.keys != None:  # we had a response
+        if painRating.keys != None:  # we had a re12sponse
             trials.addData('painRating.rt', painRating.rt)
         thisExp.nextEntry()
 

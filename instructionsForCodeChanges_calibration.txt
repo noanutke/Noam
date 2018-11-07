@@ -19,7 +19,13 @@ calibration_object = calibration.Calibration(expInfo['participant']);
 
 search for this: # -------Start Routine "stimulus"-------
 And paste this below:
-calibration_object.runVAS(vas)
+shouldRunVas = True
+
+search for this: # -------Ending Routine "stimulus"-------
+And paste this above:
+           if shouldRunVas:
+                calibration_object.runVAS(vas)
+                shouldRunVas = False;
 
 
 search for this:
@@ -27,12 +33,13 @@ search for this:
  And paste this below:
  paintCross = False
  
-search for this: 
-calibration_object.updateRating(painRating.keys)
+ search for this: painRating.rt = painRating.clock.getTime()
 And paste this below:
+calibration_object.updateRating(painRating.keys)
 paintCross = True
 painRatingText.setAutoDraw(False)
 textAfterRate.setAutoDraw(True)
+ 
 
 search for this:
 painRatingText.frameNStart = frameN  # exact frame index
@@ -42,13 +49,15 @@ And paste this below:
                 else:
                     painRatingText.setAutoDraw(True)
 					
-search for this: painRating.rt = painRating.clock.getTime()
-And paste this below:
-calibration_object.updateRating(painRating.keys)
+
 
 
 search for this:          
 # -------Ending Routine "painFeedbackRoutine"-------
+And paste below:
+calibration_object.updateRating(painRating.keys)
+
+search for:
         for thisComponent in painFeedbackRoutineComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)

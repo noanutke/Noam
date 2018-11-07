@@ -7,7 +7,7 @@ import pandas
 import openpyxl
 import utils
 
-TCP_IP = "192.168.0.1"
+TCP_IP = "192.168.49.161"
 TCP_PORT = 20121
 
 
@@ -38,6 +38,7 @@ class Calibration:
             y = regr.predict(np.array([x]).reshape(-1,1))
             y = self.round_of_rating(y)
         self.current_VAS = y if y <= 48 else 48.0;
+        self.current_VAS = y if y >= 39 else 39.0;
         if utils.pain_machine_connected:
             utils.initPain(str(self.current_VAS), False, True)
 
@@ -46,7 +47,11 @@ class Calibration:
     def updateRating(self, rating):
         if rating == "space":
             rating = 10;
-        self.rating_array = np.insert(self.rating_array, self.test_index, int(rating))
+        elif rating == []:
+            rating = None
+        else:
+            rating = int(rating)
+        self.rating_array = np.insert(self.rating_array, self.test_index, rating)
         self.tmp_array = np.insert(self.tmp_array, self.test_index, self.current_VAS)
         self.test_index += 1;
         if self.test_index == self.trials_amount:
