@@ -26,6 +26,7 @@ import calibration
 _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
 os.chdir(_thisDir)
 
+timeForTest = 6;
 # Store info about the experiment session
 expName = 'feedbackInTheMagnet'  # from the Builder filename that created this script
 expInfo = {'participant': '', 'session': '001'}
@@ -299,7 +300,7 @@ for thisLocationsLoop in locationsLoop:
         painFeedbackRoutineClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(15.000000)
+        routineTimer.add(timeForTest)
         # update component parameters for each repeat
         painRating = event.BuilderKeyResponse()
         # keep track of which components have finished
@@ -321,7 +322,7 @@ for thisLocationsLoop in locationsLoop:
                 p_port_3.frameNStart = frameN  # exact frame index
                 p_port_3.status = STARTED
                 win.callOnFlip(p_port_3.setData, int(6))
-            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + timeForTest - win.monitorFramePeriod * 0.75  # most of one frame period left
             if p_port_3.status == STARTED and t >= frameRemains:
                 p_port_3.status = STOPPED
                 win.callOnFlip(p_port_3.setData, int(0))
@@ -335,7 +336,7 @@ for thisLocationsLoop in locationsLoop:
                 # keyboard checking is just starting
                 painRating.clock.reset()  # now t=0
                 event.clearEvents(eventType='keyboard')
-            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + timeForTest - win.monitorFramePeriod * 0.75  # most of one frame period left
             if painRating.status == STARTED and t >= frameRemains:
                 painRating.status = STOPPED
             if painRating.status == STARTED:
@@ -363,7 +364,7 @@ for thisLocationsLoop in locationsLoop:
                 else:
                     painRatingText.setAutoDraw(True)
                 painRatingText.setAutoDraw(True)
-            frameRemains = 0.0 + 15 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + timeForTest - win.monitorFramePeriod * 0.75  # most of one frame period left
             if painRatingText.status == STARTED and t >= frameRemains:
                 painRatingText.setAutoDraw(False)
 

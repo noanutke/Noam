@@ -139,7 +139,7 @@ stim = visual.ImageStim(
 p_port_7 = parallel.ParallelPort(address='0x0378')
 sentence = visual.ImageStim(
     win=win, name='sentence',
-    image=u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText1.png', mask=None,
+    image=u'C:\\Users\\Noa\\Noam_cloned\\pictures\\badText1.png', mask=None,
     ori=0, pos=(0, -0.75), size=None,
     color=[1, 1, 1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -164,7 +164,7 @@ scaleImage = visual.ImageStim(
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
 rating = visual.RatingScale(win=win, name='rating', marker=u'triangle', size=1.53, pos=[0.01, -0.04], low=0, high=10,
-                            precision=1, showValue=False, markerExpansion=0, scale=u'', markerStart=u'5',
+                            precision=1, showValue=False, markerExpansion=0, scale=u'',  markerStart=u'5',
                             tickHeight=u'0', showAccept=False, lineColor='Black',textSize=0.0, leftKeys='1',
                             rightKeys='4')
 p_port_3 = parallel.ParallelPort(address='0x0378')
@@ -561,13 +561,13 @@ for thisRun in runs:
 
         else:
             if "bad1" in stimulus:
-                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText1.png'
+                sentence.image = u'C:\\Users\\Noa\\Noam_cloned\\pictures\\badText1.png'
             elif "bad2" in stimulus:
-                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\badText2.png'
+                sentence.image = u'C:\\Users\\Noa\\Noam_cloned\\pictures\\badText2.png'
             elif "neutral1" in stimulus:
-                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\neutralText1.png'
+                sentence.image = u'C:\\Users\\Noa\\Noam_cloned\\pictures\\neutralText1.png'
             else:
-                sentence.image = u'C:\\Users\\Noam\\Noam_cloned\\pictures\\neutralText2.png'
+                sentence.image = u'C:\\Users\\Noa\\Noam_cloned\\pictures\\neutralText2.png'
 
             text.size = (0, 0)
             text.color = 'Grey'
@@ -785,8 +785,12 @@ for thisRun in runs:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
         # store data for trials (TrialHandler)
-        trials.addData('rating.response', rating.getRating())
-        trials.addData('rating.rt', rating.getRT())
+
+        rate = rating.getHistory()[len(rating.getHistory()) - 1][0]
+        rt = rating.getHistory()[len(rating.getHistory()) - 1][1]
+        trials.addData('rating.response', rate)
+        trials.addData('rating.rt', rt)
+        trials.addData('rating.history', rating.getHistory())
         if p_port_3.status == STARTED:
             win.callOnFlip(p_port_3.setData, int(0))
 

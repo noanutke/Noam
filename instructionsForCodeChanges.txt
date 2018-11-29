@@ -18,13 +18,16 @@ look for: "stim.setImage(stimulus)" and delete it
 
 look for: "# ------Prepare to start Routine "stimulus"-------" and above it paste:
 
- 
-    if "VAS" in stimulus:
+  if "VAS" in stimulus:
+        showCross = True
         text.height = 0.6
         stim.opacity = 0
         sentence.opacity = 0
-        text.color = 'white'
-
+        text.color = 'Black'
+        if utils.pain_machine_connected:
+            utils.initPain(stimulus, True)
+        else:
+            print (stimulus)
     else:
         if "bad1" in stimulus:
             sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\badText1.png'
@@ -34,18 +37,12 @@ look for: "# ------Prepare to start Routine "stimulus"-------" and above it past
             sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText1.png'
         else:
             sentence.image = u'C:\\Users\\NOA\\Noam_cloned\\pictures\\neutralText2.png'
-
+        time.sleep(2)
         text.size = (0, 0)
         text.color = 'Grey'
-        stim.opacity = 1
+        stim.opacity =1
         sentence.opacity = 1
         stim.setImage(stimulus)
         stim.setSize((1, 1))
 
-look for: # ------Prepare to start Routine "decideOnStimulus_2"------- and above it paste:
-
-    if "VAS" in stimulus:
-        if utils.pain_machine_connected:
-            utils.initPain(stimulus, True)
-        else:
-            print (stimulus)
+        showCross = False
