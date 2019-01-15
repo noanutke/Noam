@@ -22,6 +22,7 @@ import os  # handy system and path functions
 import sys  # to get file system encoding
 import time
 import utils
+from psychopy import sound
 
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
@@ -29,7 +30,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 expName = 'feedbackInTheMagnet'  # from the Builder filename that created this script
-expInfo = {'participant': '', 'session': '001'}
+expInfo = {'participant': '', 'session': '001', 'order':''}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -37,16 +38,28 @@ expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data' + os.sep + '%s_%s' % (expInfo['participant'], expInfo['date'])
+order =  expInfo['order']
+filenameMain = _thisDir + os.sep + u'data' + os.sep + 'mainExp' + '%s_%s_%s' % (expInfo['participant'], expInfo['order'], expInfo['date'])
+
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
                                  extraInfo=expInfo, runtimeInfo=None,
                                  originPath=None,
                                  savePickle=True, saveWideText=True,
-                                 dataFileName=filename)
+                                 dataFileName=filenameMain)
+
+filenameArrows = _thisDir + os.sep + u'data' + os.sep + 'arrowsExp' + '%s_%s_%s' % (expInfo['participant'], expInfo['order'], expInfo['date'])
+
+
+# An ExperimentHandler isn't essential but helps with data saving
+thisExpArrows = data.ExperimentHandler(name=expName, version='',
+                                 extraInfo=expInfo, runtimeInfo=None,
+                                 originPath=None,
+                                 savePickle=True, saveWideText=True,
+                                 dataFileName=filenameArrows)
 # save a log file for detail verbose info
-logFile = logging.LogFile(filename + '.log', level=logging.EXP)
+logFile = logging.LogFile(filenameMain + '.log', level=logging.EXP)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
 
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
@@ -278,9 +291,7 @@ for thisRun in runs:
     # check responses
     if expStart_key_resp.keys in ['', [], None]:  # No response was made
         expStart_key_resp.keys = None
-    runs.addData('expStart_key_resp.keys', expStart_key_resp.keys)
-    if expStart_key_resp.keys != None:  # we had a response
-        runs.addData('expStart_key_resp.rt', expStart_key_resp.rt)
+
     # the Routine "welcome" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
 
@@ -310,9 +321,11 @@ for thisRun in runs:
             fixationStart.tStart = t
             fixationStart.frameNStart = frameN  # exact frame index
             fixationStart.setAutoDraw(True)
+
         frameRemains = 0.0 + 0.5 - win.monitorFramePeriod * 0.75  # most of one frame period left
         if fixationStart.status == STARTED and t >= frameRemains:
             fixationStart.setAutoDraw(False)
+
         # *p_port* updates
         if t >= 0.0 and p_port.status == NOT_STARTED:
             # keep track of start time/frame for later
@@ -346,13 +359,26 @@ for thisRun in runs:
     for thisComponent in startFixationComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+
     if p_port.status == STARTED:
         win.callOnFlip(p_port.setData, int(0))
 
+    blocksList = "";
+    if runs.thisRepN == 0:
+        if order == '1':
+            blocksList = 'blocksList1.xlsx'
+        else:
+            blocksList = 'blocksList2.xlsx'
+    else:
+        if order == '1':
+            blocksList = 'blocksList2.xlsx'
+        else:
+            blocksList = 'blocksList1.xlsx'
+
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler(nReps=1, method='random',
+    trials = data.TrialHandler(nReps=1, method='sequential',
                                extraInfo=expInfo, originPath=-1,
-                               trialList=data.importConditions('blocksList.xlsx'),
+                               trialList=data.importConditions(blocksList),
                                seed=None, name='trials')
     thisExp.addLoop(trials)  # add the loop to the experiment
     thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
@@ -381,6 +407,7 @@ for thisRun in runs:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
 
+        trials.addData('trialFixationStart', core.getTime())
         # -------Start Routine "fixation_2"-------
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
@@ -394,9 +421,11 @@ for thisRun in runs:
                 fixationTrial.tStart = t
                 fixationTrial.frameNStart = frameN  # exact frame index
                 fixationTrial.setAutoDraw(True)
+
             frameRemains = 0.0 + 0.5 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if fixationTrial.status == STARTED and t >= frameRemains:
                 fixationTrial.setAutoDraw(False)
+
             # *p_port_2* updates
             if t >= 0.0 and p_port_2.status == NOT_STARTED:
                 # keep track of start time/frame for later
@@ -429,6 +458,7 @@ for thisRun in runs:
         # -------Ending Routine "fixation_2"-------
         for thisComponent in fixation_2Components:
             if hasattr(thisComponent, "setAutoDraw"):
+                trials.addData('trialFixatiobEnd', core.getTime())
                 thisComponent.setAutoDraw(False)
         if p_port_2.status == STARTED:
             win.callOnFlip(p_port_2.setData, int(0))
@@ -445,6 +475,7 @@ for thisRun in runs:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
 
+        trials.addData('jitter1Start', core.getTime())
         # -------Start Routine "jitter1"-------
         while continueRoutine:
             # get current time
@@ -458,8 +489,10 @@ for thisRun in runs:
                 jitt_1.tStart = t
                 jitt_1.frameNStart = frameN  # exact frame index
                 jitt_1.setAutoDraw(True)
+
             frameRemains = 0.0 + jitter1 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if jitt_1.status == STARTED and t >= frameRemains:
+
                 jitt_1.setAutoDraw(False)
 
             # check if all components have finished
@@ -482,10 +515,13 @@ for thisRun in runs:
         # -------Ending Routine "jitter1"-------
         for thisComponent in jitter1Components:
             if hasattr(thisComponent, "setAutoDraw"):
+                trials.addData('jitter1End', core.getTime())
                 thisComponent.setAutoDraw(False)
         # the Routine "jitter1" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
-        if "VAS" in stimulus:
+        if "vas" in stimulus:
+            hello = sound.Sound('gong.wav')
+            hello.play()
             if utils.pain_machine_connected:
                 utils.initPain(stimulus, True, False)
             else:
@@ -517,13 +553,16 @@ for thisRun in runs:
                 initStimulus.tStart = t
                 initStimulus.frameNStart = frameN  # exact frame index
                 initStimulus.setAutoDraw(True)
+
             frameRemains = 0.0 + 2.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if initStimulus.status == STARTED and t >= frameRemains:
+
                 initStimulus.setAutoDraw(False)
+
 
             # *image* updates
             if t >= 0.0 and image.status == NOT_STARTED:
-                # keep track of start time/frame for later
+                # keep track of start time/frame for latera
                 image.tStart = t
                 image.frameNStart = frameN  # exact frame index
                 image.setAutoDraw(True)
@@ -553,7 +592,7 @@ for thisRun in runs:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
 
-        if "VAS" in stimulus:
+        if "vas" in stimulus:
             text.height = 0.6
             stim.opacity = 0
             sentence.opacity = 0
@@ -590,6 +629,7 @@ for thisRun in runs:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
 
+        trials.addData('stimulusStart', core.getTime())
         # -------Start Routine "stimulus"-------
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
@@ -603,9 +643,11 @@ for thisRun in runs:
                 text.tStart = t
                 text.frameNStart = frameN  # exact frame index
                 text.setAutoDraw(True)
+
             frameRemains = 0.0 + 15.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if text.status == STARTED and t >= frameRemains:
                 text.setAutoDraw(False)
+
 
             # *stim* updates
             if t >= 0.0 and stim.status == NOT_STARTED:
@@ -659,6 +701,7 @@ for thisRun in runs:
         for thisComponent in stimulusComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
+                trials.addData('stimulusEnd', core.getTime())
         if p_port_7.status == STARTED:
             win.callOnFlip(p_port_7.setData, int(0))
 
@@ -674,6 +717,7 @@ for thisRun in runs:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
 
+        trials.addData('jitter2Start', core.getTime())
         # -------Start Routine "jitter2"-------
         while continueRoutine:
             # get current time
@@ -709,6 +753,7 @@ for thisRun in runs:
                 win.flip()
 
         # -------Ending Routine "jitter2"-------
+        trials.addData('jitter2End', core.getTime())
         for thisComponent in jitter2Components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
@@ -729,6 +774,7 @@ for thisRun in runs:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
 
+        trials.addData('feedbackStart', core.getTime())
         # -------Start Routine "feedback_3"-------
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
@@ -784,6 +830,7 @@ for thisRun in runs:
         for thisComponent in feedback_3Components:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
+                trials.addData('feedbackEnd', core.getTime())
         # store data for trials (TrialHandler)
 
         rate = rating.getHistory()[len(rating.getHistory()) - 1][0]
@@ -791,6 +838,7 @@ for thisRun in runs:
         trials.addData('rating.response', rate)
         trials.addData('rating.rt', rt)
         trials.addData('rating.history', rating.getHistory())
+
         if p_port_3.status == STARTED:
             win.callOnFlip(p_port_3.setData, int(0))
 
@@ -799,13 +847,14 @@ for thisRun in runs:
                                        extraInfo=expInfo, originPath=-1,
                                        trialList=data.importConditions('arrows.xlsx'),
                                        seed=None, name='arrowsGame')
-        thisExp.addLoop(arrowsGame)  # add the loop to the experiment
+        thisExpArrows.addLoop(arrowsGame)  # add the loop to the experiment
         thisArrowsGame = arrowsGame.trialList[0]  # so we can initialise stimuli with some values
         # abbreviate parameter names if possible (e.g. rgb = thisArrowsGame.rgb)
         if thisArrowsGame != None:
             for paramName in thisArrowsGame.keys():
                 exec (paramName + '= thisArrowsGame.' + paramName)
 
+        thisExp.nextEntry()
         for thisArrowsGame in arrowsGame:
             currentLoop = arrowsGame
             # abbreviate parameter names if possible (e.g. rgb = thisArrowsGame.rgb)
@@ -821,13 +870,14 @@ for thisRun in runs:
             routineTimer.add(0.750000)
             # update component parameters for each repeat
             ar_st.setImage(direction)
-            key_resp_2 = event.BuilderKeyResponse()
+            key_resp_arrow = event.BuilderKeyResponse()
             # keep track of which components have finished
-            arrowComponents = [ar_st, key_resp_2]
+            arrowComponents = [ar_st, key_resp_arrow]
             for thisComponent in arrowComponents:
                 if hasattr(thisComponent, 'status'):
                     thisComponent.status = NOT_STARTED
 
+            arrowsGame.addData('arrowStart', core.getTime())
             # -------Start Routine "arrow"-------
             while continueRoutine and routineTimer.getTime() > 0:
                 # get current time
@@ -845,30 +895,30 @@ for thisRun in runs:
                 if ar_st.status == STARTED and t >= frameRemains:
                     ar_st.setAutoDraw(False)
 
-                # *key_resp_2* updates
-                if t >= 0.0 and key_resp_2.status == NOT_STARTED:
+                # *key_resp_arrow* updates
+                if t >= 0.0 and key_resp_arrow.status == NOT_STARTED:
                     # keep track of start time/frame for later
-                    key_resp_2.tStart = t
-                    key_resp_2.frameNStart = frameN  # exact frame index
-                    key_resp_2.status = STARTED
+                    key_resp_arrow.tStart = t
+                    key_resp_arrow.frameNStart = frameN  # exact frame index
+                    key_resp_arrow.status = STARTED
                     # keyboard checking is just starting
-                    win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
+                    win.callOnFlip(key_resp_arrow.clock.reset)  # t=0 on next screen flip
                     event.clearEvents(eventType='keyboard')
                 frameRemains = 0.0 + 0.75 - win.monitorFramePeriod * 0.75  # most of one frame period left
-                if key_resp_2.status == STARTED and t >= frameRemains:
-                    key_resp_2.status = STOPPED
-                if key_resp_2.status == STARTED:
+                if key_resp_arrow.status == STARTED and t >= frameRemains:
+                    key_resp_arrow.status = STOPPED
+                if key_resp_arrow.status == STARTED:
                     theseKeys = event.getKeys(keyList=['1', '4'])
 
                     # check for quit:
                     if "escape" in theseKeys:
                         endExpNow = True
                     if len(theseKeys) > 0:  # at least one key was pressed
-                        if key_resp_2.keys == []:  # then this was the first keypress
-                            key_resp_2.keys = theseKeys[0]  # just the first key pressed
-                            key_resp_2.rt = key_resp_2.clock.getTime()
-                            # a response ends the routine
-                            continueRoutine = False
+                        if key_resp_arrow.keys == []:  # then this was the first keypress
+                            key_resp_arrow.keys = theseKeys[0]  # just the first key pressed
+                            key_resp_arrow.rt = key_resp_arrow.clock.getTime()
+                            # a response does not end the routine
+
 
                 # check if all components have finished
                 if not continueRoutine:  # a component has requested a forced-end of Routine
@@ -891,12 +941,15 @@ for thisRun in runs:
             for thisComponent in arrowComponents:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
+                    arrowsGame.addData('arrowEnd', core.getTime())
             # check responses
-            if key_resp_2.keys in ['', [], None]:  # No response was made
-                key_resp_2.keys = None
-            arrowsGame.addData('key_resp_2.keys', key_resp_2.keys)
-            if key_resp_2.keys != None:  # we had a response
-                arrowsGame.addData('key_resp_2.rt', key_resp_2.rt)
+            responseMade = False;
+            if key_resp_arrow.keys in ['', [], None]:  # No response was made
+                key_resp_arrow.keys = None
+            arrowsGame.addData('key_resp_arrow.keys', key_resp_arrow.keys)
+            if key_resp_arrow.keys != None:  # we had a response
+                responseMade = True;
+                arrowsGame.addData('key_resp_arrow.rt', key_resp_arrow.rt)
 
             # ------Prepare to start Routine "response"-------
             t = 0
@@ -905,9 +958,9 @@ for thisRun in runs:
             continueRoutine = True
             routineTimer.add(1.500000)
             # update component parameters for each repeat
-            key_resp_3 = event.BuilderKeyResponse()
+            key_resp_arrow = event.BuilderKeyResponse()
             # keep track of which components have finished
-            responseComponents = [key_resp_3]
+            responseComponents = [key_resp_arrow]
             for thisComponent in responseComponents:
                 if hasattr(thisComponent, 'status'):
                     thisComponent.status = NOT_STARTED
@@ -919,28 +972,27 @@ for thisRun in runs:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
 
-                # *key_resp_3* updates
-                if t >= 0.0 and key_resp_3.status == NOT_STARTED:
+                # *key_resp_arrow* updates
+                if t >= 0.0 and key_resp_arrow.status == NOT_STARTED:
                     # keep track of start time/frame for later
-                    key_resp_3.tStart = t
-                    key_resp_3.frameNStart = frameN  # exact frame index
-                    key_resp_3.status = STARTED
+                    key_resp_arrow.tStart = t
+                    key_resp_arrow.frameNStart = frameN  # exact frame index
+                    key_resp_arrow.status = STARTED
                     # keyboard checking is just starting
-                    win.callOnFlip(key_resp_3.clock.reset)  # t=0 on next screen flip
-                    event.clearEvents(eventType='keyboard')
-                frameRemains = 0.0 + 1.5 - win.monitorFramePeriod * 0.75  # most of one frame period left
-                if key_resp_3.status == STARTED and t >= frameRemains:
-                    key_resp_3.status = STOPPED
-                if key_resp_3.status == STARTED:
+                    win.callOnFlip(key_resp_arrow.clock.reset)  # t=0 on next screen flip
+                    key_resp_arrowameRemains = 0.0 + 1.5 - win.monitorFramePeriod * 0.75  # most of one frame period left
+                if key_resp_arrow.status == STARTED and t >= frameRemains:
+                    key_resp_arrow.status = STOPPED
+                if key_resp_arrow.status == STARTED:
                     theseKeys = event.getKeys(keyList=['1', '4'])
 
                     # check for quit:
                     if "escape" in theseKeys:
                         endExpNow = True
-                    if len(theseKeys) > 0:  # at least one key was pressed
-                        if key_resp_3.keys == []:  # then this was the first keypress
-                            key_resp_3.keys = theseKeys[0]  # just the first key pressed
-                            key_resp_3.rt = key_resp_3.clock.getTime()
+                    if len(theseKeys) > 0 and responseMade == False:  # at least one key was pressed
+                        if key_resp_arrow.keys == []:  # then this was the first keypress
+                            key_resp_arrow.keys = theseKeys[0]  # just the first key pressed
+                            key_resp_arrow.rt = key_resp_arrow.clock.getTime()
                             # a response ends the routine
                             continueRoutine = False
 
@@ -966,28 +1018,31 @@ for thisRun in runs:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
             # check responses
-            if key_resp_3.keys in ['', [], None]:  # No response was made
-                key_resp_3.keys = None
-            arrowsGame.addData('key_resp_3.keys', key_resp_3.keys)
-            if key_resp_3.keys != None:  # we had a response
-                arrowsGame.addData('key_resp_3.rt', key_resp_3.rt)
-            thisExp.nextEntry()
+            if responseMade == False:
+                if key_resp_arrow.keys in ['', [], None]:  # No response was made
+                    key_resp_arrow.keys = None
+                arrowsGame.addData('key_resp_arrow.keys', key_resp_arrow.keys)
+                if key_resp_arrow.keys != None:  # we had a response
+                    arrowsGame.addData('key_resp_arrow.rt', key_resp_arrow.rt)
+            thisExpArrows.nextEntry()
 
         # completed 1 repeats of 'arrowsGame'
 
-        thisExp.nextEntry()
+
 
     # completed 1 repeats of 'trials'
 
-
-    thisExp.nextEntry()
 # completed 2 repeats of 'runs'
 
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename + '.csv')
 thisExp.saveAsPickle(filename)
+
+thisExpArrows.saveAsWideText(filenameArrows + '.csv')
+thisExpArrows.saveAsPickle(filenameArrows)
 logging.flush()
 # make sure everything is closed down
 thisExp.abort()  # or data files will save again on exit
+thisExpArrows.abort()  # or data files will save again on exit
 win.close()
 core.quit()
